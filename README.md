@@ -27,7 +27,8 @@ Removal of unwanted genes
 6.	Download the gene summary information by uploding IDs of extracted genes (EG) of Cyprinus carpio from the Gene database using NCBI's Entrez search
 7.	Program 'GenomicAccList.pl' uses downloaded gene summary files of each species for removing additional gene information (HK gene, Un and mitogenes) from files and generates lists of absolute 'GeneIDs' and (GenomicIDs) genomic accession IDs in the subdirectory 'GenomicIDsList' inside working path.
 8.	Uploads Genomic Accession list of species in NCBI's Batch Entrez and Download the corresponding genomic sequences of species and put in subdirectory 'DownloadedGenome'.
-9.	Program 'ParseGenomicFileGBnFASTA.pl' explodes individual genomic sequences from downloaded genomic files in the subdirectory 'GenomicIDsList' inside working path. 
+9.	Program 'ParseGenomicFileGBnFASTA.pl' explodes individual genomic sequences from downloaded genomic files in the subdirectory 'GenomicIDsList' inside working path.
+
 ######################################
  
 Upstream parse
@@ -37,9 +38,10 @@ Upstream parse
 
 HRE Mining
 11.	Run # perl HREFinder.pl Cyprinus_carpio_upstream_31466.fasta
+
 ######################################
 
- Meta-Analysis of HREFinder Result
+Meta-Analysis of HREFinder Result
 12.	Now run 'DatabaseCreation.pl' for tables creation of 'carphre' database
 13.	A program 'PositionEvaluate.pl' uses mined HRE file ‘Cyprinus_carpio_upstream_31466_AllMinedHRE.txt' (ie. an output file of HREFinder.pl) file to evaluate localization coordinates on the genomic sequences for gene, upstream, 30 nt long HRE sub-string, HRE motif, HAS motif, and Ebox motif. Further, it populates all evaluated information along with gene information into two tables 'genesummary' and 'upstreaminfo' of the 'carphre' database.
 14.	Run program 'MotifClust.pl' for obtaining separate files of gene IDs for (i)All genes of this study,(ii) All HRE,(iii) All HAS,(iv)All E-box for producing Venn diagram using Venny program. This program provides input file to Venny for clustering results.
